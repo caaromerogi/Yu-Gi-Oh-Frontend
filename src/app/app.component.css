@@ -1,0 +1,10 @@
+div{
+  height:100%;
+}
+.image{
+  height: max-content;
+  background-attachment: fixed;
+  background: center center cover no-repeat fixed;
+  background-image:url('../../src/assets/blackskybackground.jpg');
+
+}

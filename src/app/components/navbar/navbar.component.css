@@ -1,3 +1,9 @@
 .navbar-nav li a {
     color: white;
 }
+
+.navbar.navbar{
+  background-color: #2b0864;
+}
+
+

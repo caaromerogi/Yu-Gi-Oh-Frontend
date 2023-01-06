@@ -1,0 +1,14 @@
+
+input[type=checkbox] + label{
+  border-color: #360b7a;
+  color: white;
+  width: 8rem;
+}
+
+input[type=checkbox]:checked + label{
+   background-color: #360b7a;
+}
+
+input[type=checkbox]:hover + label{
+  background-color: #360b7a;
+}

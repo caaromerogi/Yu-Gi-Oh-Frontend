@@ -5,3 +5,12 @@
 h1{
     font-weight: 500;
 }
+
+.btn{
+  background-color:#360b7a;
+   color: aliceblue;
+    border-color: black;
+}
+.btn:hover{
+  opacity: 0.8;
+}
