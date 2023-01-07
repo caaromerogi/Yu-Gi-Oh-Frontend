@@ -47,8 +47,8 @@ export class HttpServiceService {
     return this.httpClient.post<ResponseModel>(this.host + '/Purchase/CreatePurchaseOrder', command);
   }
 
-  getAllPurchases(query:GetPurchasesQuery):Observable<Purchase>{
-    return this.httpClient.get<Purchase>(this.host + '/Purchase/GetPurchases');
+  getAllPurchases(query:GetPurchasesQuery):Observable<Purchase[]>{
+    return this.httpClient.get<Purchase[]>(this.host + '/Purchase/GetPurchases');
   }
 
 }

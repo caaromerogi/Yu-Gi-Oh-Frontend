@@ -70,7 +70,8 @@ export class ProductDetailsComponent implements OnInit {
         this.quantity= Number(prodinp!.quantity) + Number(this.quantity)
         if(this.validate()){
           cart.filter(p => p.productId === this.product!.productId).map(p => p.quantity = this.quantity);
-        localStorage.setItem('cart', JSON.stringify(cart))
+          localStorage.setItem('cart', JSON.stringify(cart))
+          alert("Product successfully added")
         }
       }else{
         let product ={
@@ -79,6 +80,7 @@ export class ProductDetailsComponent implements OnInit {
         }
         cart.push(product);
         localStorage.setItem('cart', JSON.stringify(cart))
+        alert("Product successfully added")
       }
     }
   }
@@ -94,5 +96,9 @@ export class ProductDetailsComponent implements OnInit {
       bool = false;
     }
     return bool;
+  }
+
+  public goToEdit(id:number):void{
+    this.router.navigateByUrl(`createProduct/${id}`)
   }
 }

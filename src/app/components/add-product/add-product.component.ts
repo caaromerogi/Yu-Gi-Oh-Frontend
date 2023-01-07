@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpServiceService } from 'src/app/services/http-service.service';
+import { SplitnameService } from 'src/app/services/splitname.service';
 
 @Component({
   selector: 'app-add-product',
@@ -9,9 +10,11 @@ import { HttpServiceService } from 'src/app/services/http-service.service';
 })
 export class AddProductComponent implements OnInit{
   ngOnInit(): void {
+    this.getProductById();
   }
   constructor(private httpSevice:HttpServiceService,
-    private activatedRoute: ActivatedRoute){}
+    private activatedRoute: ActivatedRoute,
+    private splitService:SplitnameService){}
   productId:string = this.activatedRoute.snapshot.paramMap.get('id') as string;
   name:string = "";
   price:number = 0;
@@ -20,6 +23,27 @@ export class AddProductComponent implements OnInit{
   inInventory:number = 0;
   maxPurchase:number = 0;
   minPurchase:number = 0;
+
+  async getProductById():Promise<void>{
+    if(this.productId !== "0"){
+      let query = {
+        productId: Number(this.productId)
+      }
+      this.httpSevice.getProductById(query)
+      .subscribe({
+        next: result => {
+          let splited = this.splitService.splitName(result);
+          this.name = splited.productName;
+          this.price =splited.productPrice;
+          this.imgPath = splited.imgPath;
+          this.type=splited.category;
+          this.inInventory=splited.inInventory;
+          this.maxPurchase = splited.maxPurchase;
+          this.minPurchase = splited.minPurchase;
+        }
+      })
+    }
+  }
 
   async addProduct():Promise<void>{
     if (this.productId === "0"){
