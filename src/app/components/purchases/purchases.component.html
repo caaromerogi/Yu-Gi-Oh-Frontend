@@ -1,18 +1,20 @@
 <div *ngIf="purchases.length != 0" style="min-height: 100vh;">
   <div class="d-flex flex-column justify-content-center align-items-center">
     <h1 class="border-bottom pt-5 ps-5 pb-2 text-white display-4" style="width: 75vw;">Purchases</h1>
-    <div *ngFor="let item of purchases" class="d-flex flex-column align-items-center justify-content-center pt-5 overflow-auto" style="height: 50rem">
-      <div class="card mb-3" style="max-width: 700px;">
-        <div class="row g-0">
-          <div class="col-md-12">
-            <div class="card-body">
-              <h5 class="card-title">{{item.clientName}}</h5>
-              <h6 class="">{{item.idType}}: {{item.idNumber}}</h6>
-              <h6 class="">Date: {{item.date}}</h6>
-              <div class="overflow-auto">
-                <div style="height:50px; width: 500px;" *ngFor="let p of item.products">
-                  <h6>Product Name:{{p.productName.split("-")[0]}}</h6>
-                  <h6>Quantity: {{p.quantity}}</h6>
+    <div style="height: 50rem; width: 75vw;" class="overflow-auto" >
+      <div *ngFor="let item of purchases" class="d-flex flex-column align-items-center justify-content-center pt-5" style="height: 20rem">
+        <div class="card mb-3" style="max-width: 700px;">
+          <div class="row g-0">
+            <div class="col-md-12">
+              <div class="card-body">
+                <h5 class="card-title">{{item.clientName}}</h5>
+                <h6 class="">{{item.idType}}: {{item.idNumber}}</h6>
+                <h6 class="">Date: {{item.date}}</h6>
+                <div class="overflow-auto">
+                  <div style="height:50px; width: 500px;" *ngFor="let p of item.products">
+                    <h6>Product Name:{{p.productName.split("-")[0]}}</h6>
+                    <h6>Quantity: {{p.quantity}}</h6>
+                  </div>
                 </div>
               </div>
             </div>

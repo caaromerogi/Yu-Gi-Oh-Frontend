@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductInPurchase } from 'src/app/response/ProductInPurchase';
 import { ProductToShow } from 'src/app/response/ProductToShow';
 import { ProductToShowCart } from 'src/app/response/ProductToShowCart';
@@ -15,7 +16,8 @@ export class ShoppingCartComponent implements OnInit{
     this.getCartItems();
   }
   constructor(private httpService:HttpServiceService,
-    private splitNameService:SplitnameService){
+    private splitNameService:SplitnameService,
+    private router:Router){
   }
   products:ProductToShowCart[] = []
   productsDictionary ={
@@ -70,6 +72,7 @@ export class ShoppingCartComponent implements OnInit{
         this.idNumber = 0;
         this.idType ="";
         localStorage.removeItem('cart')
+        this.router.navigateByUrl('products')
       },
       error:err=> console.error(err)
     })
