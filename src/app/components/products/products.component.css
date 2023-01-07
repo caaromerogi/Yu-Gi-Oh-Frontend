@@ -1,14 +1,41 @@
 
-input[type=checkbox] + label{
+input[type=radio] + label{
   border-color: #360b7a;
   color: white;
   width: 8rem;
 }
 
-input[type=checkbox]:checked + label{
+input[type=radio]:checked + label{
    background-color: #360b7a;
 }
 
-input[type=checkbox]:hover + label{
+input[type=radio]:hover + label{
   background-color: #360b7a;
 }
+
+.dropdown-menu{
+  background-color: black;
+}
+.dropdown-item{
+  background-color: black;
+  color: aliceblue;
+  font-weight: 400;
+}
+
+.dropdown-item:hover{
+  background-color: rgb(78, 78, 78);
+  color: aliceblue;
+  font-weight: 400;
+}
+
+li{
+  cursor: pointer;
+}
+
+.page-item{
+  background-color: black;
+}
+.page-linl{
+  background-color: black;
+}
+

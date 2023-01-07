@@ -40,7 +40,7 @@ export class HttpServiceService {
   }
 
   getProductById(query:GetProductById):Observable<Product>{
-    return this.httpClient.get<Product>(this.host+`/GetProductById?ProductId=${query.productId}`);
+    return this.httpClient.get<Product>(this.host+`/Product/GetProductById?ProductId=${query.productId}`);
   }
 
   generatePurchase(command:CreatePurchaseCommand):Observable<ResponseModel>{

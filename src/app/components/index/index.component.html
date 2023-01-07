@@ -2,22 +2,14 @@
   <div class="container">
     <h4 class="text-center">
       <a href="" class="text-center">
-        <img src="assets/yugiohlogo.png" style="width: 18vw;" alt="">
+        <img src="assets/yugiohlogo.png" style="width: 25rem;" alt="">
       </a>
     </h4>
   </div>
   <div *ngIf="productsToShow"  class="card-container d-flex justify-content-around flex-wrap"  style="width: 85vw;">
     <div *ngFor="let item of productsToShow">
-        <div class="card mt-5 border border-dark" style="width: 18rem; background-color: black">
-          <img [src]="item.imgPath" class="card-img-top" alt="...">
-          <div class="card-body p-3">
-            <h5 class="card-title text-white pb-1">{{item.productName}}</h5>
-            <p class="card-text text-white"><b>Price:</b> {{item.productPrice}}</p>
-            <p class="card-text text-white">Min purchase: {{item.minPurchase}}</p>
-            <p class="card-text text-white pb-2">Max purchase: {{item.maxPurchase}}</p>
-            <a href="#" class="btn btn-primary rounded-0 p-2">Add to cart</a>
-          </div>
-        </div>
+      <app-card-detail [product] = item>
+      </app-card-detail>
     </div>
   </div>
 </div>

@@ -6,6 +6,7 @@ import { PaginatedList } from 'src/app/response/PaginatedList';
 import { Product } from 'src/app/response/Product';
 import { ProductToShow } from 'src/app/response/ProductToShow';
 import { HttpServiceService } from 'src/app/services/http-service.service';
+import { SplitnameService } from 'src/app/services/splitname.service';
 
 @Component({
   selector: 'app-index',
@@ -15,7 +16,8 @@ import { HttpServiceService } from 'src/app/services/http-service.service';
 export class IndexComponent implements OnInit{
   constructor(
     private router: Router,
-    private httpClient: HttpServiceService
+    private httpClient: HttpServiceService,
+    private splitNameService:SplitnameService
   ){};
   ngOnInit(): void {
     this.getProducts();
@@ -46,7 +48,7 @@ export class IndexComponent implements OnInit{
   private showProductsIndex():void {
     if (this.products.length < 4) {
       this.products.forEach(p => {
-        this.productsToShow.push(this.splitName(p));
+        this.productsToShow.push(this.splitNameService.splitName(p));
       })
     }
     if (this.products.length >= 4) {
@@ -69,13 +71,13 @@ export class IndexComponent implements OnInit{
       }
 
       this.productsToShow.push(
-        this.splitName(this.products[randomProduct1])
+        this.splitNameService.splitName(this.products[randomProduct1])
         );
       this.productsToShow.push(
-        this.splitName(this.products[randomProduct2])
+        this.splitNameService.splitName(this.products[randomProduct2])
         );
       this.productsToShow.push(
-        this.splitName(this.products[randomProduct3])
+        this.splitNameService.splitName(this.products[randomProduct3])
         );
     }
   }

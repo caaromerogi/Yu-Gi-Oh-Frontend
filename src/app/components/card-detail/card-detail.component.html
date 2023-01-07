@@ -1,0 +1,13 @@
+<div class="card mt-5 border border-dark" style="width: 18rem; background-color: black">
+  <img style="cursor: pointer" (click)="goToProductDetails(product!.productId)" [src]="product!.imgPath" class="card-img-top" alt="...">
+  <div class="card-body ">
+    <h5 class="card-title text-white " style="cursor: pointer" (click)="goToProductDetails(product!.productId)">{{product!.productName}}</h5>
+    <p class="card-text text-white m-0"><b>Price:</b> {{product!.productPrice | number: "1.0-2"}} COP</p>
+    <p class="card-text text-white m-0"><b>Min purchase</b>: {{product!.minPurchase}}</p>
+    <p class="card-text text-white "><b>Max purchase</b>: {{product!.maxPurchase}}</p>
+
+    <div class="d-flex justify-content-between"> <a (click)="goToProductDetails(product!.productId)"  class="btn btn-primary rounded-0">Details</a>
+    </div>
+  </div>
+</div>
+

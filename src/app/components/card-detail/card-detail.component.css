@@ -1,0 +1,44 @@
+.btn-primary{
+  background-color:#360b7a;
+   color: aliceblue;
+    border-color: black;
+}
+.btn-primary:hover{
+  opacity: 0.8;
+}
+
+.btn-warning{
+  background-color: #000000;
+}
+.btn-warning:hover{
+  background-color: #dde01e;
+}
+
+.svg-warning{
+  fill: #dde01e;
+}
+.svg-warning:hover{
+  fill: #000000;
+}
+
+.btn-danger{
+  background-color: #000000;
+}
+.btn-danger:hover{
+  background-color: rgb(194, 51, 51);
+}
+
+.svg-danger{
+  fill: rgb(194, 51, 51);
+}
+.svg-danger:hover{
+  fill: #000000;
+}
+
+.btn-delete{
+  background-color: rgb(172, 31, 31);
+  color: white;
+}
+.btn-delete:hover{
+  opacity: 0.8;
+}

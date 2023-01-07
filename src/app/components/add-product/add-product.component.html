@@ -1,0 +1,61 @@
+<div class="min-vh-100 d-flex justify-content-center">
+  <div class="d-flex flex-column" style="padding-top: 5rem;">
+    <h1 class="display-5 text-white">Create/Update Product</h1>
+    <div class="pt-4">
+      <div class="row mb-3">
+        <label for="inputName3" class="col-sm-2 col-form-label text-white text-left">Name</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="name" type="text" class="form-control" id="inputName3" >
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="inputName3" class="col-sm-2 col-form-label text-white text-left">Price</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="price" type="number" class="form-control" id="inputName3" >
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="inputName3" class="col-sm-2 col-form-label text-white text-left">ImgPath</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="imgPath" type="text" class="form-control" id="inputName3" >
+        </div>
+      </div>
+      <div class="row mb-3" >
+        <label for="" class="text-white">Type</label>
+        <div style="padding-left:6rem;" >
+          <div class="form-check">
+            <input [(ngModel)]="type" (change)="onChange($event)" class="form-check-input" value="Monster" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+            <label class="form-check-label text-white" for="flexRadioDefault1">
+              Monster
+            </label>
+          </div>
+          <div class="form-check col-sm-10">
+            <input [(ngModel)]="type" (change)="onChange($event)" class="form-check-input" value="Magic/Spell" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+            <label class="form-check-label text-white" for="flexRadioDefault2">
+              Magic/Spell
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="inputName3" class="col-sm-2 col-form-label text-white text-left">Inventory</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="inInventory" type="number" class="form-control" id="inputName3" >
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="inputName3" class="col-sm-2 col-form-label text-white text-left">Max </label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="maxPurchase" type="number" class="form-control" id="inputName3" >
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="inputName3" class="col-sm-2 col-form-label text-white text-left">Min </label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="minPurchase" type="text" class="form-control" id="inputName3" >
+        </div>
+      </div>
+      <button (click)="addProduct()" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</div>
